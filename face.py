@@ -9,7 +9,7 @@ import numpy as np
 from numpy import genfromtxt
 import tensorflow as tf
 from fr_utils import *
-from inception_blocks_v2 import *
+#from inception_blocks_v2 import *
 
 PADDING = 50
 ready_to_detect_identity = True
