@@ -49,10 +49,10 @@ def resize(img):
 
 #load image
 
-img = cv2.imread('images\Ahmed_b.jpg')
-img1 = cv2.imread('images/Ahmed_b.jpg')
+img = cv2.imread('images\hamada.jpg')
+img1 = cv2.imread('images/hamada.jpg')
 
-print('images\Ahmed_b.jpg' )
+print('images\hamada.jpg' )
 print(img.shape)
 print(img1.shape)
 
