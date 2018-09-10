@@ -10,7 +10,7 @@ from fr_utils import *
 
 PADDING = 50
 
-from matplotlib.pyplot import imshow
+#from matplotlib.pyplot import imshow
 import face_recognition
 
 
