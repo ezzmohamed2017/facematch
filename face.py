@@ -128,22 +128,7 @@ def resize(img):
 database = prepare_database()
 
 #load image
-'''
-for file in glob.glob("match/*"):
-    identity = os.path.splitext(os.path.basename(file))[0]
-            
-    img = cv2.imread(file)
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    img=resize(img)
 
-    #database[identity] = face_recognizer(img)
- 
-    #print(' ',identity,'Head')#,img.shape)
-    encoding= face_recognizer(img)
-    #print('encod',encoding.shape)
-
-    identity= match_face(identity,encoding,database)
-'''
 img = cv2.imread('\images\Ahmed_b.jpg')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img=resize(img)
