@@ -33,8 +33,6 @@ def face_recognizer(frame):
     encoding = face_recognition.face_encodings(frame, boxes)      
 
     return encoding  
-
-
         
 def resize(img):
     height, width = img.shape[:2] # without channel
