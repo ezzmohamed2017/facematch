@@ -135,11 +135,9 @@ for file in glob.glob("match/*"):
     img = cv2.imread(file)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img=resize(img)
-    '''
-       if 'ezz_rot' in identity:
-        img= allignFace(img)
-        print('ezz_rot')
-    '''
+    #  if 'ezz_rot' in identity:
+    #    img= allignFace(img)
+    #    print('ezz_rot')
 
     #database[identity] = face_recognizer(img)
  
