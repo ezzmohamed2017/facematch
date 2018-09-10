@@ -53,7 +53,7 @@ img = cv2.imread('images\hamada.jpg')
 img1 = cv2.imread('images/hamada.jpg')
 
 print('images\hamada.jpg' )
-print(img.shape)
+#print(img.shape)
 print(img1.shape)
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
