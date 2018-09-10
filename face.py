@@ -123,7 +123,7 @@ def resize(img):
     dim=(int(width*scale),int(height*scale)) 
     #print(dim)
     resized = cv2.resize(img, dim, interpolation =cv2.INTER_AREA)
-    imshow(resized) 
+    #imshow(resized) 
     return resized
 database = prepare_database()
 
