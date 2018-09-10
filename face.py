@@ -13,7 +13,6 @@ PADDING = 50
 from matplotlib.pyplot import imshow
 import face_recognition
 
-%matplotlib inline
 
 def prepare_database():
     database = {}
