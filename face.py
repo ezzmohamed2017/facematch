@@ -50,8 +50,12 @@ def resize(img):
 #load image
 
 img = cv2.imread('images\Ahmed_b.jpg')
-print('images\Ahmed_b.jpg')
+img1 = cv2.imread('images/Ahmed_b.jpg')
+
+print('images\Ahmed_b.jpg' )
 print(img.shape)
+print(img1.shape)
+
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img=resize(img)
 encoding= face_recognizer(img)
