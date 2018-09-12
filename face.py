@@ -33,7 +33,28 @@ def face_recognizer(frame):
     encoding = face_recognition.face_encodings(frame, boxes)      
 
     return encoding  
+def face_align(img):
+        # initialize dlib's face detector (HOG-based) and then create
+        # the facial landmark predictor and the face aligner
+        detector = dlib.get_frontal_face_detector()
+        predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+        fa = FaceAligner(predictor, desiredFaceWidth=256)      
+ 
+        # show the original input image and detect faces in the grayscale
+        # image
+        rects = detector(img, 2)
         
+        # loop over the face detections
+        for rect in rects:
+                # extract the ROI of the *original* face, then align the face
+                # using facial landmarks
+                (x, y, w, h) = rect_to_bb(rect)
+                faceOrig = imutils.resize(image[y:y + h, x:x + w], width=256)
+                faceAligned = fa.align(img, img, rect)
+                return faceAligned
+
+
+
 def resize(img):
     height, width = img.shape[:2] # without channel
     #print(height, width)
@@ -53,7 +74,7 @@ img = cv2.imread('images/hamada.jpg')
 print(img.shape)
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
+img = face_align(img)
 
 img=resize(img)
 encoding= face_recognizer(img)
