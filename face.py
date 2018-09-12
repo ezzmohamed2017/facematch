@@ -7,6 +7,7 @@ import numpy as np
 from numpy import genfromtxt
 import tensorflow as tf
 from fr_utils import *
+import dlib
 
 PADDING = 50
 
