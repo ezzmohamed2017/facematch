@@ -34,6 +34,12 @@ def face_recognizer(frame):
     encoding = face_recognition.face_encodings(frame, boxes)      
 
     return encoding  
+
+
+from imutils.face_utils import FaceAligner
+from imutils.face_utils import rect_to_bb
+import imutils
+
 def face_align(img):
         # initialize dlib's face detector (HOG-based) and then create
         # the facial landmark predictor and the face aligner
@@ -50,10 +56,9 @@ def face_align(img):
                 # extract the ROI of the *original* face, then align the face
                 # using facial landmarks
                 (x, y, w, h) = rect_to_bb(rect)
-                faceOrig = imutils.resize(image[y:y + h, x:x + w], width=256)
+                faceOrig = imutils.resize(img[y:y + h, x:x + w], width=256)
                 faceAligned = fa.align(img, img, rect)
                 return faceAligned
-
 
 
 def resize(img):
@@ -76,6 +81,7 @@ print(img.shape)
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img = face_align(img)
+print(img.shape)
 
 img=resize(img)
 encoding= face_recognizer(img)
