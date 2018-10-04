@@ -9,4 +9,4 @@ def index():
     return 'Welcome first restAPI'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host= '0.0.0.0')
